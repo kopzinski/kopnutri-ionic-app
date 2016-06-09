@@ -1,0 +1,26 @@
+<ion-view view-title="Registro de Refeição">
+  <ion-content class="padding">
+    <div class="center">
+
+      <label class="item item-input">
+        <span class="input-label">Data: </span>
+        <input type="text" disabled  value="{{ tempo | date : 'medium' }}">
+      </label>
+
+
+    </div>
+    <form name="upload" class="form center" data-ng-submit="addFile()">
+      <input type="file" name="file" multiple
+             onchange="angular.element(this).scope().uploadedFile(this)" />
+      <button class = "button button-full  button-small button-balanced" type="submit">Subir Foto</button>
+    </form>
+
+    <div ng-show="picture" style="text-align: center">
+      <img ng-src = "{{picture}}" width="200">
+      <button class="button button-full button-small button-assertive" ng-click="registarRefeicao()">
+        Registrar Refeição
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>

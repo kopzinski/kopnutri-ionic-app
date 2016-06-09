@@ -1,0 +1,31 @@
+<ion-view view-title="KopNutri - Login">
+  <ion-content class="padding">
+    <div ng-show="!logado" class="center">
+
+      <span ng-show="errorMessage">
+        {{errorMessage}}
+      </span>
+
+      <label class="item item-input-wrapper">
+        <span class="input-label">Username: </span>
+        <input type="text" ng-model="user.username" >
+      </label>
+
+      <label class="item item-input-wrapper">
+        <span class="input-label">Password: </span>
+        <input type="text" ng-model="user.password" >
+      </label>
+
+      <button class="button button-full button-small button-balanced" ng-click = "login()">
+        Login
+      </button>
+
+    </div>
+    <div ng-show="logado" class="center">
+      <span >
+        Ola {{user.nome}},
+        Bem vindo ao App KopNutri!
+      </span>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-view view-title="Histórico de Água">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="agua in aguas" type="item-text-wrap" href="#/tab/chats/{{agua.id}}">
+        <h3>{{agua.data | date : 'medium'}}</h3>
+        <p>{{agua.quantidade}} ml</p>
+
+        <ion-option-button class="button-assertive" ng-click="remove(agua)">
+          Excluir
+        </ion-option-button>
+      </ion-item>
+
+      <ion-item>
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+            <input type="text" ng-model="nova.quantidade" placeholder="300 ml">
+          </label>
+          <button class="button button-small button-balanced" ng-click = "inserir()">
+            Enviar
+          </button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
